@@ -1,0 +1,43 @@
+<section id="post-tab">
+                <h2>Liste des posts</h2>
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    nom
+                                </th>
+                                <th>
+                                    description
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-post">
+                            <?php
+                            foreach($postsCategoryTab as $item)
+                                {
+                                    echo "<tr>";
+                                    echo "<td>";
+                                    echo $item->getId();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getName();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getDescription();
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                    <?php
+                    require '_post-category-create.phtml';
+                    require '_post-category-edit.phtml';
+                    ?>
+                </section>
+
+            </section>

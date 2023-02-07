@@ -15,6 +15,14 @@ function checkRoute(string $route) : void
         require 'pages/register.php';
     }
 
+    else if($route === "admin-posts") {
+        require 'pages/admin/post.php';
+    }
+
+    else if($route === "admin-categories") {
+        require 'pages/admin/post-category.php';
+    }
+
     else {
         require 'pages/homepage.php';
     }

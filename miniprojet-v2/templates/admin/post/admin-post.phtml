@@ -1,0 +1,57 @@
+<section id="post-tab">
+                <h2>Liste des posts</h2>
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    titre
+                                </th>
+                                <th>
+                                    contenu
+                                </th>
+                                <th>
+                                    auteur
+                                </th>
+                                <th>
+                                    catégorie
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-post">
+                            <?php
+                            foreach($postsTab as $item)
+                                {
+                                    echo "<tr>";
+                                    echo "<td>";
+                                    echo $item->getId();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getTitle();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getContent();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getAuthor();
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo $item->getCategory();
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                    <?php
+                    require '_post-create.phtml';
+                    require '_post-edit.phtml';
+                    ?>
+                </section>
+
+            </section>
+
+

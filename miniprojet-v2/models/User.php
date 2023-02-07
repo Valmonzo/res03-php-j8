@@ -114,6 +114,8 @@ removePost(Post $post) : array qui retire le $post au tableau des posts et renvo
             }
         }
         
-        return $newPosts;
+        $this->posts = $newPosts;
+        
+        return $this->posts;
     }
 }
