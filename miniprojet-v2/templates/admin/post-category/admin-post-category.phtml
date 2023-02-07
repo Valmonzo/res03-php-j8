@@ -19,17 +19,19 @@
                             <?php
                             foreach($postsCategoryTab as $item)
                                 {
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $item->getId();
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $item->getName();
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $item->getDescription();
-                                    echo "</td>";
-                                    echo "</tr>";
+                            ?>
+                            <tr>
+                                <td>
+                                    <?= $item->getId(); ?>
+                                </td>
+                                <td>
+                                    <?= $item->getName();?>
+                                </td>
+                                <td>
+                                    <?= $item->getDescription(); ?>
+                                 </td>
+                            </tr>
+                            <?php
                                 }
                             ?>
                         </tbody>

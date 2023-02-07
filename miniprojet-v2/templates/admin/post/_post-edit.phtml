@@ -1,0 +1,32 @@
+<form method="post" action="index.php">
+    <fieldset>
+        <label for="title-update">Titre</label>
+        <input type="text" name="new-title"/>
+    </fieldset>
+    <fieldset>
+        <label for="content-update">Contenu</label>
+        <textarea id="content-update" name="content-update">
+            Le contenu de votre article ...
+        </textarea>
+    </fieldset>
+    <fieldset>
+        <label for="category-update">Category</label>
+        <select>
+            <option value="">--Choisir une catégorie--</option>
+            <?php
+                foreach($postsCategoryTab as $item)
+                {
+            ?>
+
+            <option value="<?= $item->getId() ?>"><?= $item->getName(); ?></option>
+
+            <?php
+                }
+            ?>
+        </select>
+    <fieldset>
+        <input type="submit" name="submit" value="Valider"/>
+    </fieldset>
+
+    <input type="hidden" name="formEditPost"/>
+</form>

@@ -1,0 +1,32 @@
+<form method="post" action="index.php">
+    <fieldset>
+        <label for="new-title">Titre</label>
+        <input type="text" name="new-title"/>
+    </fieldset>
+    <fieldset>
+        <label for="new-content">Contenu</label>
+        <textarea id="new-content" name="new-content">
+            Le contenu de votre article ...
+        </textarea>
+    </fieldset>
+    <fieldset>
+        <label for="new-category">Category</label>
+        <select>
+            <option value="">--Choisir une catégorie--</option>
+            <?php
+                foreach($postsCategoryTab as $item)
+                {
+            ?>
+
+            <option value="<?= $item->getId(); ?>"><?= $item->getName(); ?></option>
+
+            <?php
+                }
+            ?>
+        </select>
+    </fieldset>
+    <fieldset>
+        <input type="submit" name="submit" value="Valider"/>
+    </fieldset>
+    <input type="hidden" name="formCreatePost"/>
+</form>
